@@ -5,6 +5,14 @@ import confLogo from '../images/badge-header.svg';
 
 class Badge extends React.Component {
   render() {
+    const {
+      firstName,
+      lastName,
+      avatar,
+      jobTitle,
+      twitterUsername,
+      hashConf
+    } = this.props;
     return (
       <div className="Badge">
         <div className="Badge__header">
@@ -12,22 +20,18 @@ class Badge extends React.Component {
         </div>
 
         <div className="Badge__section-name">
-          <img
-            className="Badge__avatar"
-            src="https://es.gravatar.com/userimage/45568449/994578a2ded18412e6d69bfb0362823d?size=200"
-            alt="Avatar"
-          />
+          <img className="Badge__avatar" src={avatar} alt="Avatar" />
           <h1>
-            Mariangélica <br /> Useche
+            {firstName} <br /> {lastName}
           </h1>
         </div>
 
         <div className="Badge__section-info">
-          <h3>Computer Scientist</h3>
-          <div>@mustarte</div>
+          <h3>{jobTitle}</h3>
+          <div>@{twitterUsername}</div>
         </div>
 
-        <div className="Badge__footer">#platziconf</div>
+        <div className="Badge__footer">#{hashConf}</div>
       </div>
     );
   }
