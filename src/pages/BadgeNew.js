@@ -10,7 +10,27 @@ import './styles/BadgeNew.css';
 import header from '../images/badge-header.svg';
 
 export default class BadgeNew extends Component {
+  state = {
+    form: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      jobTitle: '',
+      twitterUsername: ''
+    }
+  };
+
+  handleChange = e => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
+
   render() {
+    const { form } = this.state;
     return (
       <div>
         <Navbar />
@@ -21,16 +41,20 @@ export default class BadgeNew extends Component {
           <div className="row">
             <div className="col">
               <Badge
-                firstName="Mariangélica"
-                lastName="Useche"
-                jobTitle="Computer Scientist"
-                twitterUsername="mustarte"
+                firstName={form.firstName}
+                lastName={form.lastName}
+                jobTitle={form.jobTitle}
+                twitterUsername={form.twitterUsername}
                 avatar="https://es.gravatar.com/userimage/45568449/994578a2ded18412e6d69bfb0362823d?size=200"
+                email={form.email}
                 hashConf="platziconf"
               />
             </div>
             <div className="col">
-              <BadgeForm />
+              <BadgeForm
+                onChange={this.handleChange}
+                formValues={this.state.form}
+              />
             </div>
           </div>
         </div>
