@@ -1,0 +1,22 @@
+.BadgesListItem {
+  background-color: white;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.BadgeListItem__info-container {
+  margin-left: 0.5em;
+}
+
+.BadgeListItem__twitter {
+  color: #0084b4;
+  font-weight: bold;
+}
+.BadgeListItem__jonTitle {
+  font-size: 0.9em;
+}
+
+.BadgesListItem__avatar {
+  border-radius: 3em;
+}
